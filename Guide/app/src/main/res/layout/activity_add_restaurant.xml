@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    android:background="#3aa8c1"
+    tools:context=".AddRestaurantActivity">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/display_text"
+        android:text="Restaurant Information"
+        android:gravity="center"
+        android:textSize="30dp"
+        android:textStyle="bold"
+        android:textColor="@color/colorBlack"
+        android:layout_marginTop="10dp"
+        />
+
+
+
+    <EditText
+        android:id="@+id/restaurant_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/display_text"
+        android:layout_marginTop="16dp"
+        android:hint="Enter Restaurant Name"
+        android:inputType="text"
+        android:padding="8dp"
+        android:background="@drawable/background"/>
+    <EditText
+        android:id="@+id/restaurant_address"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/restaurant_name"
+        android:layout_marginTop="16dp"
+        android:hint="Enter Restaurant Address"
+        android:inputType="text"
+        android:padding="8dp"
+        android:background="@drawable/background"/>
+
+    <EditText
+        android:id="@+id/restaurant_phone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/restaurant_address"
+        android:layout_marginTop="16dp"
+        android:hint="Enter Restaurant Phone Number"
+        android:inputType="phone"
+        android:padding="8dp"
+        android:background="@drawable/background"/>
+
+    <EditText
+        android:id="@+id/restaurant_desc"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/restaurant_phone"
+        android:layout_marginTop="16dp"
+        android:hint="Enter Restaurant Description"
+        android:inputType="text"
+        android:padding="8dp"
+        android:background="@drawable/background"/>
+
+
+    <RatingBar
+        android:id="@+id/rating"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/restaurant_tag"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="16dp"
+        android:numStars="5"
+        android:stepSize=".5"
+        android:saveEnabled="true" />
+
+    <Button
+        android:id="@+id/addButton"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/rating"
+        android:layout_centerHorizontal="true"
+        android:text="Add Restaurant"
+        android:textStyle="bold"
+        android:textColor="@color/colorBlack"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/background"
+        />
+    <AutoCompleteTextView
+        android:id="@+id/restaurant_tag"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/restaurant_desc"
+        android:layout_marginTop="16dp"
+        android:hint="Select a tag"
+        android:padding="8dp"
+        android:completionThreshold="1"
+        android:background="@drawable/background"
+        />
+
+</RelativeLayout>
