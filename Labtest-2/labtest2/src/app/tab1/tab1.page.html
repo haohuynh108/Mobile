@@ -1,0 +1,43 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title class="title">
+      GPS Tracking 
+    </ion-title>
+  </ion-toolbar>
+ </ion-header>
+  
+ <ion-content [fullscreen]="true" class="container">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title  >GPS Tracking</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  
+  <ion-item>
+    <ion-label class="head">Location:</ion-label>
+    <ion-input type="text" id="name" [(ngModel)]="name"></ion-input>
+  </ion-item>
+
+
+ <ion-button (click)="saveLocation()">
+  <ion-icon name="save"></ion-icon>Save Location
+ </ion-button>
+  
+ <ion-list>
+  <ion-item *ngFor="let location of locations">Location: {{location.name}}  Position: timestamp:{{location.coordinates[0]| date:'mm/dd/yyyy, h:mm a'}}, lat:{{location.coordinates[1]}}, long:{{location.coordinates[2]}}</ion-item>
+ </ion-list>
+  
+ <ion-button (click)="clear()">
+  <ion-icon name="close"></ion-icon>Clear All
+ </ion-button>
+  
+ <ion-list>
+  <ion-item *ngFor="let location of locations; let i = index">
+    Location: {{location.name}}  Position: timestamp:{{location.coordinates[0]| date:'mm/dd/yyyy, h:mm a'}}, lat:{{location.coordinates[1]}}, long:{{location.coordinates[2]}}
+    <ion-button (click)="deleteLocation(i)"><ion-icon name="trash"></ion-icon></ion-button>
+  </ion-item>
+ </ion-list>
+  
+
+ </ion-content>
+ 
